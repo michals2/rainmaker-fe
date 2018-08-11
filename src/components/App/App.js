@@ -1,21 +1,26 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { graphql } from "react-apollo";
+import gql from "graphql-tag";
+
+console.log(gql, graphql);
+
+const myQuery = gql`
+  {
+    hello
+  }
+`;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <h1>Rainmaker</h1>
+        <h3>
+          {this.props.data.hello}
+        </h3>
       </div>
     );
   }
 }
 
-export default App;
+export default graphql(myQuery)(App);
