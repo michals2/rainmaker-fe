@@ -33,8 +33,14 @@ class SiderPresenter extends React.Component {
           </AntdMenu.Item>
           <AntdMenu.Item key="2">
             <Link to="/analysis">
-              <AntdIcon type="pie-chart" />
+              <AntdIcon type="line-chart" />
               <span>Analysis</span>
+            </Link>
+          </AntdMenu.Item>
+          <AntdMenu.Item key="3">
+            <Link to="/settings">
+              <AntdIcon type="setting" />
+              <span>Settings</span>
             </Link>
           </AntdMenu.Item>
         </AntdMenu>
