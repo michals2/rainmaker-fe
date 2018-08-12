@@ -1,3 +1,3 @@
-import AppPresenter from "./AppPresenter";
+import AppContainer from "./AppContainer";
 
-export default AppPresenter;
+export default AppContainer;

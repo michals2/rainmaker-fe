@@ -1,16 +1,7 @@
 import React from "react";
-import { graphql } from "react-apollo";
-import gql from "graphql-tag";
+import { Button } from "antd";
 
-const myQuery = gql`
-  {
-    company(symbol: "tsla") {
-      name
-    }
-  }
-`;
-
-const App = props => {
+const AppPresenter = props => {
   const { company } = props.data;
   return (
     <div>
@@ -18,8 +9,9 @@ const App = props => {
       <h3>
         {company ? company.name : null}
       </h3>
+      <Button type="primary">Button</Button>
     </div>
   );
 };
 
-export default graphql(myQuery)(App);
+export default AppPresenter;
