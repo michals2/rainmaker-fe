@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 
-import App from "./components/App/App";
+import App from "./components/App";
 
 const client = new ApolloClient({
   uri: "https://rainmaker-api.now.sh"
