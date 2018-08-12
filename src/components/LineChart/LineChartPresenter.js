@@ -1,7 +1,8 @@
 import React from "react";
 import { scaleLinear, scaleTime, line as d3Line, extent, timeParse } from "d3";
+import deepmerge from "deepmerge";
 
-const LineChartPresenter = ({ data = [], config }) => {
+const LineChartPresenter = ({ data = [], config = {} }) => {
   const defaultOptions = {
     dims: {
       chart: {
@@ -16,7 +17,7 @@ const LineChartPresenter = ({ data = [], config }) => {
       dateFormat: "%d-%b-%y"
     }
   };
-  const options = Object.assign({}, defaultOptions, config);
+  const options = deepmerge(defaultOptions, config);
 
   const width =
     options.dims.chart.width -
