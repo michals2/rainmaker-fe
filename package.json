@@ -9,6 +9,7 @@
     "deepmerge": "^2.1.1",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
+    "ramda": "^0.25.0",
     "react": "^16.4.2",
     "react-apollo": "^2.1.11",
     "react-dom": "^16.4.2",
@@ -22,6 +23,8 @@
   },
   "devDependencies": {
     "babel-plugin-import": "^1.8.0",
+    "path": "^0.12.7",
+    "react-app-rewire-aliases": "^0.2.0",
     "react-app-rewired": "^1.5.2"
   },
   "now": {

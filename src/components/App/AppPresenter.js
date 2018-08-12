@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "antd";
-import LineChart from "../LineChart";
+import LineChart from "@components/LineChart";
 
-import stockPrices from "../../mockData/stockPrices";
+import stockPrices from "@mockData/stockPrices";
 
 const AppPresenter = props => {
   const { company } = props.data;
