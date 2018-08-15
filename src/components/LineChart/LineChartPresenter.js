@@ -6,10 +6,10 @@ const LineChartPresenter = ({ data = [], config = {} }) => {
   const defaultOptions = {
     dims: {
       chart: {
-        width: 960,
-        height: 500
+        width: 200,
+        height: 150
       },
-      margin: { top: 20, right: 20, bottom: 30, left: 50 }
+      margin: { top: 10, right: 10, bottom: 10, left: 10 }
     },
     data: {
       yDataKey: "price",
@@ -42,7 +42,11 @@ const LineChartPresenter = ({ data = [], config = {} }) => {
   y.domain(extent(parsedData, d => d[options.data.yDataKey]));
 
   return (
-    <svg width={options.dims.chart.width} height={options.dims.chart.height}>
+    <svg
+      width={options.dims.chart.width}
+      height={options.dims.chart.height}
+      style={{ border: "1px solid" }}
+    >
       <g
         transform={`translate(${options.dims.margin.left},${options.dims.margin
           .right})`}
