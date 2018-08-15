@@ -22,9 +22,9 @@ const AppPresenter = () =>
           <Route path="/analysis" component={AnalysisPage} />
         </div>
       </AntdContent>
-      <AntdFooter style={{ textAlign: "center" }}>
+      {/* <AntdFooter style={{ textAlign: "center" }}>
         Rainmaker Created 2018 by Luke Michals
-      </AntdFooter>
+      </AntdFooter> */}
     </AntdLayout>
   </AntdLayout>;
 
