@@ -1,31 +1,49 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Router } from "react-router-dom";
 import { Layout as AntdLayout } from "antd";
 
 import Sider from "@components/Sider";
 
 import AnalysisPage from "@components/AnalysisPage";
 import HomePage from "@components/HomePage";
+import LoginPage from "@components/LoginPage";
+
+import Auth from "../../Auth/Auth.js";
+import history from "../../history.js";
 
 const { Content: AntdContent, Footer: AntdFooter } = AntdLayout;
 
 AntdContent.displayName = "AntdContent";
 AntdFooter.displayName = "AntdFooter";
 
+const auth = new Auth();
+
+const handleAuthentication = (nextState, replace) => {
+  if (/access_token|id_token|error/.test(nextState.location.hash)) {
+    auth.handleAuthentication();
+  }
+};
+
 const AppPresenter = () =>
-  <AntdLayout style={{ minHeight: "100vh" }}>
-    <Sider />
-    <AntdLayout>
-      <AntdContent style={{ margin: "16px 16px" }}>
-        <div style={{ padding: 24, background: "#fff", minHeight: 360 }}>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/analysis" component={AnalysisPage} />
-        </div>
-      </AntdContent>
-      {/* <AntdFooter style={{ textAlign: "center" }}>
-        Rainmaker Created 2018 by Luke Michals
-      </AntdFooter> */}
+  <Router history={history} component={HomePage}>
+    <AntdLayout style={{ minHeight: "100vh" }}>
+      <Sider />
+      <AntdLayout>
+        <AntdContent style={{ margin: "16px 16px" }}>
+          <div style={{ padding: 24, background: "#fff", minHeight: 360 }}>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/login" component={LoginPage} />
+            <Route
+              path="/analysis"
+              render={props => {
+                handleAuthentication(props);
+                return <AnalysisPage {...props} />;
+              }}
+            />
+          </div>
+        </AntdContent>
+      </AntdLayout>
     </AntdLayout>
-  </AntdLayout>;
+  </Router>;
 
 export default AppPresenter;

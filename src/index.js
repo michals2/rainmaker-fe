@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
+// import { BrowserRouter as Router } from "react-router-dom";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import { LocaleProvider } from "antd";
@@ -15,9 +15,9 @@ const client = new ApolloClient({
 ReactDOM.render(
   <ApolloProvider client={client}>
     <LocaleProvider locale={en_US}>
-      <Router>
-        <App />
-      </Router>
+      {/* <Router> */}
+      <App />
+      {/* </Router> */}
     </LocaleProvider>
   </ApolloProvider>,
   document.getElementById("root")
