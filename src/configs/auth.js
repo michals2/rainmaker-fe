@@ -1,14 +1,19 @@
 import auth0 from "auth0-js";
 import history from "./history";
 
+const redirectUri =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:3000/analysis"
+    : "https://rainmaker.now.sh/analysis";
+
 export default class Auth {
   auth0 = new auth0.WebAuth({
     domain: "rainmaker-auth.auth0.com",
     clientID: "YJ9rf3_qmazAzsJ-ylFLHSYAar4FPXr9",
-    redirectUri: "http://localhost:3000/analysis",
     audience: "https://rainmaker-auth.auth0.com/userinfo",
     responseType: "token id_token",
-    scope: "openid"
+    scope: "openid",
+    redirectUri
   });
 
   login() {
