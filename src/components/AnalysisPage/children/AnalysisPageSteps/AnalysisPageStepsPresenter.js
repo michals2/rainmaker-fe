@@ -3,8 +3,8 @@ import { Steps } from "antd";
 
 const Step = Steps.Step;
 
-const AnalysisPageStepsPresenter = ({ currentStep }) =>
-  <Steps size="small" current={currentStep}>
+const AnalysisPageStepsPresenter = ({ step }) =>
+  <Steps size="small" current={step}>
     <Step title="Company" />
     <Step title="Duration" />
     <Step title="Training Data" />

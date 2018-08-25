@@ -8,8 +8,9 @@ import stockPrices from "@mockData/stockPrices";
 const AnalysisPagePresenter = props => {
   return (
     <div>
-      <AnalysisPageSteps />
-      <Button onClick={props.increment}>Increment</Button>
+      <AnalysisPageSteps step={props.step} />
+      <Button onClick={props.decrement}>Prev Step</Button>
+      <Button onClick={props.increment}>Next Step</Button>
       <LineChart data={stockPrices} />
     </div>
   );
