@@ -6,6 +6,7 @@ import Sider from "@components/Sider";
 
 import AnalysisPage from "@components/AnalysisPage";
 import HomePage from "@components/HomePage";
+import LandingPage from "@components/LandingPage";
 import LoginPage from "@components/LoginPage";
 
 import Auth from "@configs/auth.js";
@@ -31,13 +32,24 @@ const AppPresenter = () =>
       <AntdLayout>
         <AntdContent style={{ margin: "16px 16px" }}>
           <div style={{ padding: 24, background: "#fff", minHeight: 360 }}>
-            <Route exact path="/" component={HomePage} />
+            <Route exact path="/" component={LandingPage} />
             <Route path="/login" component={LoginPage} />
             <Route
               path="/analysis"
+              render={() => {
+                if (auth.isAuthenticated()) {
+                  return <AnalysisPage />;
+                } else {
+                  history.replace("/login");
+                  return <LoginPage />;
+                }
+              }}
+            />
+            <Route
+              path="/home"
               render={props => {
                 handleAuthentication(props);
-                return <AnalysisPage {...props} />;
+                return auth.isAuthenticated() ? <HomePage /> : <LoginPage />;
               }}
             />
           </div>

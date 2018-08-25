@@ -3,8 +3,8 @@ import history from "./history";
 
 const redirectUri =
   process.env.NODE_ENV === "development"
-    ? "http://localhost:3000/analysis"
-    : "https://rainmaker.now.sh/analysis";
+    ? "http://localhost:3000/home"
+    : "https://rainmaker.now.sh/home";
 
 export default class Auth {
   auth0 = new auth0.WebAuth({
@@ -26,7 +26,7 @@ export default class Auth {
         this.setSession(authResult);
         history.replace("/home");
       } else if (err) {
-        history.replace("/home");
+        history.replace("/");
         console.log(err);
       }
     });
@@ -49,8 +49,8 @@ export default class Auth {
     localStorage.removeItem("access_token");
     localStorage.removeItem("id_token");
     localStorage.removeItem("expires_at");
-    // navigate to the home route
-    history.replace("/home");
+    // navigate to the landing page
+    history.replace("/");
   }
 
   isAuthenticated() {
