@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "antd": "^3.8.0",
-    "apollo-boost": "^0.1.13",
+    "antd": "^3.8.2",
+    "apollo-boost": "^0.1.14",
     "auth0-js": "^9.7.3",
-    "d3": "^5.5.0",
+    "d3": "^5.7.0",
     "deepmerge": "^2.1.1",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
