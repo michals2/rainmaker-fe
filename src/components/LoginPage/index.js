@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+
 import Auth from "@configs/auth.js";
 const auth = new Auth();
 
-class App extends Component {
+class LoginPage extends Component {
   goTo(route) {
     this.props.history.replace(`/${route}`);
   }
@@ -30,4 +31,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default LoginPage;

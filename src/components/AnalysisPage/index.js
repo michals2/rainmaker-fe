@@ -1,3 +1,3 @@
-import AnalysisPageContainer from "./AnalysisPageContainer";
+import AnalysisPageWithState from "./AnalysisPageWithState";
 
-export default AnalysisPageContainer;
+export default AnalysisPageWithState;

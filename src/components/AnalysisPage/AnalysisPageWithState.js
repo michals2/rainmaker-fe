@@ -11,6 +11,6 @@ const addCounting = compose(
   })
 );
 
-const AnalysisPageContainer = addCounting(AnalysisPagePresenter);
+const AnalysisPageWithState = addCounting(AnalysisPagePresenter);
 
-export default AnalysisPageContainer;
+export default AnalysisPageWithState;

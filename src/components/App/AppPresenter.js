@@ -36,6 +36,7 @@ const AppPresenter = () =>
             <Route
               path="/analysis"
               render={props => {
+                console.log({ props });
                 handleAuthentication(props);
                 return <AnalysisPage {...props} />;
               }}
