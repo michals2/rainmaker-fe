@@ -1,7 +1,7 @@
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
 
-import Step1Presenter from "./Step1Presenter";
+import Step0Presenter from "./Step0Presenter";
 
 const companiesQuery = gql`
   {
@@ -18,6 +18,6 @@ const companiesQuery = gql`
   }
 `;
 
-const Step1Container = graphql(companiesQuery)(Step1Presenter);
+const Step0Container = graphql(companiesQuery)(Step0Presenter);
 
-export default Step1Container;
+export default Step0Container;
