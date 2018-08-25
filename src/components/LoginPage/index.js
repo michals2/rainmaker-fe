@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Auth from "../../Auth/Auth.js";
+import Auth from "@configs/auth.js";
 const auth = new Auth();
 
 class App extends Component {

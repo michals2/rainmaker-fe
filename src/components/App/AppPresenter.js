@@ -8,8 +8,8 @@ import AnalysisPage from "@components/AnalysisPage";
 import HomePage from "@components/HomePage";
 import LoginPage from "@components/LoginPage";
 
-import Auth from "../../Auth/Auth.js";
-import history from "../../history.js";
+import Auth from "@configs/auth.js";
+import history from "@configs/history.js";
 
 const { Content: AntdContent, Footer: AntdFooter } = AntdLayout;
 

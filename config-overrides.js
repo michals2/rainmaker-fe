@@ -10,7 +10,8 @@ const override = (config, env) => {
   );
   config = rewireAliases.aliasesOptions({
     "@components": path.resolve(__dirname, `${paths.appSrc}/components/`),
-    "@mockData": path.resolve(__dirname, `${paths.appSrc}/mockData/`)
+    "@mockData": path.resolve(__dirname, `${paths.appSrc}/mockData/`),
+    "@configs": path.resolve(__dirname, `${paths.appSrc}/configs/`)
   })(config, env);
   return config;
 };
