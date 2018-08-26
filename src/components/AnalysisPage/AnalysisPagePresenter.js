@@ -1,8 +1,8 @@
-import React from "react";
+import * as React from 'react';
 import { Button } from "antd";
 
 import AnalysisPageSteps from "./children/AnalysisPageSteps";
-// import LineChart from "@components/LineChart";
+// import LineChart from "components/LineChart";
 // import stockPrices from "@mockData/stockPrices";
 import AnalysisPageContent from "./children/AnalysisPageContent";
 

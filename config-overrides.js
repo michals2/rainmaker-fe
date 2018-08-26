@@ -1,19 +1,26 @@
-const { injectBabelPlugin } = require("react-app-rewired");
-const rewireAliases = require("react-app-rewire-aliases");
-const { paths } = require("react-app-rewired");
-const path = require("path");
+const tsImportPluginFactory = require("ts-import-plugin");
+const { getLoader } = require("react-app-rewired");
 
-const override = (config, env) => {
-  config = injectBabelPlugin(
-    ["import", { libraryName: "antd", libraryDirectory: "es", style: "css" }],
-    config
+module.exports = function override(config, env) {
+  const tsLoader = getLoader(
+    config.module.rules,
+    rule =>
+      rule.loader &&
+      typeof rule.loader === "string" &&
+      rule.loader.includes("ts-loader")
   );
-  config = rewireAliases.aliasesOptions({
-    "@components": path.resolve(__dirname, `${paths.appSrc}/components/`),
-    "@mockData": path.resolve(__dirname, `${paths.appSrc}/mockData/`),
-    "@configs": path.resolve(__dirname, `${paths.appSrc}/configs/`)
-  })(config, env);
+
+  tsLoader.options = {
+    getCustomTransformers: () => ({
+      before: [
+        tsImportPluginFactory({
+          libraryDirectory: "es",
+          libraryName: "antd",
+          style: "css",
+        }),
+      ],
+    }),
+  };
+
   return config;
 };
-
-module.exports = override;

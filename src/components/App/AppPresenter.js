@@ -1,16 +1,17 @@
-import React from "react";
+import * as React from 'react';
 import { Route, Router } from "react-router-dom";
 import { Layout as AntdLayout } from "antd";
 
-import Sider from "@components/Sider";
+import Sider from "components/Sider";
 
-import AnalysisPage from "@components/AnalysisPage";
-import HomePage from "@components/HomePage";
-import LandingPage from "@components/LandingPage";
-import LoginPage from "@components/LoginPage";
+import AnalysisPage from "components/AnalysisPage";
+import HomePage from "components/HomePage";
+import LandingPage from "components/LandingPage";
+import LoginPage from "components/LoginPage";
 
-import Auth from "@configs/auth.js";
-import history from "@configs/history.js";
+import Auth from "configs/auth.js";
+import history from "configs/history.js";
+import './App.css';
 
 const { Content: AntdContent, Footer: AntdFooter } = AntdLayout;
 

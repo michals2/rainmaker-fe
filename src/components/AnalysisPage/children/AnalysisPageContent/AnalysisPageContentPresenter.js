@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from 'react';
 
 import Step0 from "./children/Step0";
 import Step1 from "./children/Step1";

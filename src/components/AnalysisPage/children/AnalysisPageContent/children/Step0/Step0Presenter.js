@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from 'react';
 
 const Step0Presenter = () => <div>Step0</div>;
 

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Auth from "@configs/auth.js";
+import Auth from "configs/auth.js";
 const auth = new Auth();
 
 class LoginPage extends Component {
